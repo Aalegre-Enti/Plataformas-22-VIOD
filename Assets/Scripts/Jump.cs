@@ -15,9 +15,10 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            rb.AddForce(Vector2.up * force);
-        }
+        if (!PauseMenu.instance.isPaused)
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb.AddForce(Vector2.up * force);
+            }
     }
 }
